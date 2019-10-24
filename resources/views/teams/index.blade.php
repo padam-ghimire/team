@@ -12,7 +12,9 @@
                        @foreach ($teams as $team)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                         <a href="{{ route('teams.show',$team)}}">{{$team->name}}</a>
+                            @if($team->ownedByCurrentUser())
                                 <span class="badge badge-primary badge-pill ">Admin</span>
+                            @endif
                             </li>    
                         @endforeach
                    </ul>
